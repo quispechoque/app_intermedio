@@ -6,10 +6,10 @@ class AdjetivosAdverbios extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Crear un reproductor de audio
+    
     final player = AudioPlayer();
 
-    // Lista de adjetivos con imagen y audio
+    // adjetivos 
     final List<Map<String, String>> adjetivos = [
       {
         "nombre": "Happy",
