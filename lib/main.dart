@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+
+//Nuevas ventanas añadidas
+import 'pantallas/ventana_menu_principal.dart';
+import 'pantallas/ventana_bienvenida.dart';
+
+//Ventanas que ya existian
+import 'pantallas/ventana_juegos.dart'; //es una edicion de la anterior ventana MenuPrincipal
 import 'pantallas/verbos.dart';
 import 'pantallas/pregunta_respuesta.dart';
 import 'pantallas/adjetivos_adverbios.dart';
@@ -13,60 +20,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Menú principal',
+      title: 'Aplicacion intermedia',
       debugShowCheckedModeBanner: false,
+      //Tema de la aplicacion
       theme: ThemeData(
         colorSchemeSeed: Colors.blue,
         useMaterial3: true,
       ),
-      home: const MenuPrincipal(),
-    );
-  }
-}
 
-class MenuPrincipal extends StatelessWidget {
-  const MenuPrincipal({super.key});
+      //Ruta inicial
+      initialRoute: '/',
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Menú principal")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+      //Rutas de las ventanas
 
-            // boton Verbos
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-              MaterialPageRoute(builder: (_) =>VerbosScreen()));
-              },
-              child: const Text("Verbos"),
-            ),
-            const SizedBox(height: 20),
+      /*
+        Para agregar una ruta solo es canbiar lo que esta entre comillas por un nombre que quieras y invicar a la clase correspondiente, hay que importar el archivo dart de la ventana arriba
 
-            // botn pregunta y respuesta
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const PreguntaRespuestaScreen()));
-              },
-              child: const Text("Pregunta - Respuesta"),
-            ),
-            const SizedBox(height: 20),
+        '/rutaextra: (context) => const claseDeVentana(),'
+      */
 
-            // boton adjetivos y adverbios
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const AdjetivosAdverbiosScreen()));
-              },
-              child: const Text("Adjetivos y Adverbios"),
-            ),
-          ],
-        ),
-      ),
+      routes: {
+        '/': (context) => const VentanaMenuPrincipal(),
+        '/ventana_bienvenida': (context) => const VentanaBienvenida(),
+        '/ventana_juegos': (context) => MenuJuegos(),
+        '/verbos':(context) => VerbosScreen(),
+        '/preguntas': (context) => PreguntaRespuestaScreen(),
+        '/adjetivos': (context) => AdjetivosAdverbiosScreen(),
+      },
     );
   }
 }
