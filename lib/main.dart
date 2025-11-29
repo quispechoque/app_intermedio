@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         '/ventana_juegos': (context) => MenuJuegos(),
         '/verbos':(context) => VerbosScreen(),
         '/preguntas': (context) => PreguntaRespuestaScreen(),
-        '/adjetivos': (context) => AdjetivosAdverbiosScreen(),
+        '/adjetivos': (context) => AdjetivosAdverbios(),
       },
     );
   }
