@@ -39,6 +39,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  #aqui añadi la carpeta de imagenes
   assets:
     - assets/audio/
+    - assets/images/
 
