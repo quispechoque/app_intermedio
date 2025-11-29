@@ -1,3 +1,4 @@
+import 'package:app_intermedio/pantallas/ventana_tiempos_verbales.dart';
 import 'package:flutter/material.dart';
 
 //Nuevas ventanas añadidas
@@ -34,14 +35,17 @@ class MyApp extends StatelessWidget {
       //Rutas de las ventanas
 
       /*
-        Para agregar una ruta solo es canbiar lo que esta entre comillas por un nombre que quieras y invicar a la clase correspondiente, hay que importar el archivo dart de la ventana arriba
+        Para agregar una ruta solo es canbiar lo que esta entre comillas por un nombre que quieras 
+        y invocar a la clase correspondiente, hay que importar el archivo dart de la ventana arriba
 
-        '/rutaextra: (context) => const claseDeVentana(),'
+        '/rutaextra': (context) => const claseDeVentana(),
       */
 
       routes: {
         '/': (context) => const VentanaMenuPrincipal(),
         '/ventana_bienvenida': (context) => const VentanaBienvenida(),
+        '/ventana_tiempos_verbales': (context) => const VentanaTiemposVerbales(),
+
         '/ventana_juegos': (context) => MenuJuegos(),
         '/verbos':(context) => VerbosScreen(),
         '/preguntas': (context) => PreguntaRespuestaScreen(),

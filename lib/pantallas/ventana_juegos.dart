@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 /*
+  Aldrin Rocha
   NOTA: cambie el nombre para evitar confuciones 
   con el menu princial que se ve al iniciar la app
 
@@ -10,6 +11,7 @@ import 'package:flutter/material.dart';
   Ahora:
     Navigator.pushNamed(context, '/direccion');
 */
+
 class MenuJuegos extends StatelessWidget {
   const MenuJuegos({super.key});
 
@@ -17,36 +19,57 @@ class MenuJuegos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Menú principal")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // boton Verbos
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/verbos');
-              },
-              child: const Text("Verbos"),
-            ),
-            const SizedBox(height: 20),
-
-            // botn pregunta y respuesta
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/preguntas');
-              },
-              child: const Text("Pregunta - Respuesta"),
-            ),
-            const SizedBox(height: 20),
-
-            // boton adjetivos y adverbios
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/adjetivos');
-              },
-              child: const Text("Adjetivos y Adverbios"),
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              //Grid para los botones
+              GridView.count(
+                crossAxisCount: 2, // dos columnas(en auto crea dos filas)
+                mainAxisSpacing: 10,//espaciado en vertical
+                crossAxisSpacing: 10,//espaciado en horaizontal
+                //añadi el espaciado asi porque usar Sizedbox aqui era complicado
+                childAspectRatio: 3,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(), //esto evitar la barra de delizamiento
+                children: [
+                  // boton Verbos
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/verbos');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(double.infinity, 20),
+                    ),
+                    child: const Text("Verbos"),
+                  ),
+                  // botn pregunta y respuesta
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/preguntas');
+                    },
+                    child: const Text("Pregunta - Respuesta"),
+                  ),
+                  // boton adjetivos y adverbios
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/adjetivos');
+                    },
+                    child: const Text("Adjetivos y Adverbios"),
+                  ),
+                  // boton timepos Verbales
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/ventana_tiempos_verbales');
+                    },
+                    child: const Text("Tiempos Verbales"),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
