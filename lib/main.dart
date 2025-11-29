@@ -1,3 +1,4 @@
+import 'package:app_intermedio/pantallas/ventana_tiempos_verbales.dart';
 import 'package:flutter/material.dart';
 
 //Nuevas ventanas añadidas
@@ -43,6 +44,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const VentanaMenuPrincipal(),
         '/ventana_bienvenida': (context) => const VentanaBienvenida(),
+        '/ventana_tiempos_verbales': (context) => const VentanaTiemposVerbales(),
+
         '/ventana_juegos': (context) => MenuJuegos(),
         '/verbos':(context) => VerbosScreen(),
         '/preguntas': (context) => PreguntaRespuestaScreen(),
