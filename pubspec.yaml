@@ -41,14 +41,8 @@ flutter:
 
   #aqui añadi la carpeta de imagenes
   assets:
-    - assets/audio/verbos/i_am.mp3
-    - assets/audio/verbos/you_are.mp3
-    - assets/audio/verbos/he_is.mp3     
-    - assets/audio/verbos/she_is.mp3
-    - assets/audio/verbos/it_is.mp3
-    - assets/audio/verbos/we_are.mp3
-    - assets/audio/verbos/they_are.mp3
-    - assets/audio/ej_adjetivos/Mary_is_happy.mp3
-    - assets/audio/ej_adjetivos/Mary_is_sad.mp3
+    - assets/audio/
+    - assets/audio/verbos/
+    - assets/audio/ej_adjetivos/
     - assets/images/
-
+    
