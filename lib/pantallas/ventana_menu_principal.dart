@@ -8,7 +8,6 @@ class VentanaMenuPrincipal extends StatefulWidget {
 }
 
 class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
-  //esto es para controlar el nombre escrito en la caja de texto
   final TextEditingController _nombre = TextEditingController();
   String nombre = "";
   String genero = "";
@@ -20,92 +19,115 @@ class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
         title: const Text('Aplicacion intermedia'),
         backgroundColor: Colors.lime,
       ),
-      body: Padding( 
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child:  Center(
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 20),
-              const Text('BIENVENIDO!!!', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+              const Text(
+                'BIENVENIDO!!!',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
 
-              //Para ingresar el nombre
+              const SizedBox(height: 30),
+
+              // Caja de texto estilizada
               SizedBox(
-                width: 200,
+                width: 260,
                 child: TextField(
                   controller: _nombre,
-                  decoration: const InputDecoration(
-                    labelText: "Escribe tu nombre aqui",
+                  decoration: InputDecoration(
+                    labelText: "Escribe tu nombre",
+                    filled: true,
+                    fillColor: const Color.fromARGB(255, 188, 237, 189),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
 
-              //para el genero
-              const Text("¿Cual es su genero?"),
               const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: (){
-                      EscogerGenero("Masculino");
-                    }, 
-                    child: const Text("Masculino")),
-                  ElevatedButton(
-                    onPressed: (){
-                      EscogerGenero("Femenino");
-                    },  
-                    child: const Text("Femenino")),
-                ],
+              const Text("¿Cuál es tu género?"),
+              const SizedBox(height: 10),
+
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.black38),
+                ),
+                child: DropdownButton<String>(
+                  value: genero.isEmpty ? null : genero,
+                  hint: const Text("Selecciona uno"),
+                  isExpanded: true,
+                  underline: const SizedBox(),
+                  items: const [
+                    DropdownMenuItem(
+                      value: "Masculino",
+                      child: Text("Masculino"),
+                    ),
+                    DropdownMenuItem(
+                      value: "Femenino",
+                      child: Text("Femenino"),
+                    ),
+                  ],
+                  onChanged: (value) {
+                    setState(() {
+                      genero = value!;
+                    });
+                  },
+                ),
               ),
-              const SizedBox(height: 20),
 
-              //Botones para avanzar o limpiar datos
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: (){}, 
-                    child: const Text("Limpiar")),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                    ),
+                    onPressed: aceptar,
+                    child: const Text("Aceptar"),
+                  ),
+                  const SizedBox(width: 15),
                   ElevatedButton(
-                    onPressed: Aceptar, 
-                    child: const Text("Aceptar")),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent,
+                    ),
+                    onPressed: limpiar,
+                    child: const Text("Limpiar"),
+                  ),
                 ],
               ),
             ],
           ),
         ),
-      )
+      ),
     );
   }
 
-  //Funciones
-  void EscogerGenero (String g){
-    setState(() {
-      genero = g;
-    });
-  }
+  void aceptar() {
+    nombre = _nombre.text;
 
-  void Aceptar(){
-    setState(() {
-      nombre=_nombre.text;
-    });
     Navigator.pushNamed(
-      context, '/ventana_bienvenida',
+      context,
+      '/ventana_bienvenida',
       arguments: {
-        'nombre':nombre,
-        'genero':genero,
+        'nombre': nombre,
+        'genero': genero,
       },
     );
+    limpiar();
   }
-  
-  void Limpiar(){
+
+  void limpiar() {
     setState(() {
       _nombre.clear();
       genero = "";
     });
   }
-
 }
-
