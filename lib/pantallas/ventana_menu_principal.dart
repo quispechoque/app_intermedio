@@ -27,21 +27,25 @@ class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 20),
-              const Text('BIENVENIDO'),
+              const Text('BIENVENIDO!!!', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
 
               //Para ingresar el nombre
-              const Text("Ingresa tu nombre:"),
-              TextField(
-                controller: _nombre,
-                decoration: const InputDecoration(
-                  labelText: "Escribe tu nombre aqui",
+              SizedBox(
+                width: 200,
+                child: TextField(
+                  controller: _nombre,
+                  decoration: const InputDecoration(
+                    labelText: "Escribe tu nombre aqui",
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
 
               //para el genero
-              const Text("Cual es su genero?"),
+              const Text("¿Cual es su genero?"),
+              const SizedBox(height: 20),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                     onPressed: (){
@@ -59,6 +63,7 @@ class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
 
               //Botones para avanzar o limpiar datos
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                     onPressed: (){}, 

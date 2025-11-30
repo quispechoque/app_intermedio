@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class PracticaBe extends StatefulWidget {
   const PracticaBe({super.key});

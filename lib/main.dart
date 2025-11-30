@@ -46,10 +46,10 @@ class MyApp extends StatelessWidget {
         '/ventana_bienvenida': (context) => const VentanaBienvenida(),
         '/ventana_tiempos_verbales': (context) => const VentanaTiemposVerbales(),
 
-        '/ventana_juegos': (context) => MenuJuegos(),
+        '/ventana_juegos': (context) => const MenuJuegos(),
         '/verbos':(context) => VerbosScreen(),
-        '/preguntas': (context) => PreguntaRespuestaScreen(),
-        '/adjetivos': (context) => AdjetivosAdverbios(),
+        '/preguntas': (context) => const PreguntaRespuestaScreen(),
+        '/adjetivos': (context) => const AdjetivosAdverbios(),
       },
     );
   }

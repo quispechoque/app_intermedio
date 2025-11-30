@@ -44,6 +44,7 @@ class _VentanaBienvenidaState extends State<VentanaBienvenida> {
               const SizedBox(height: 20),
 
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                     onPressed: (){
