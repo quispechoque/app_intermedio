@@ -55,7 +55,7 @@ class MenuJuegos extends StatelessWidget {
                   // boton adjetivos y adverbios
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/adjetivos');
+                      Navigator.pushNamed(context, '/adjetivosadverbios');
                     },
                     child: const Text("Adjetivos y Adverbios"),
                   ),

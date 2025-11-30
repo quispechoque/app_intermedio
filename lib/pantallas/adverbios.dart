@@ -9,7 +9,7 @@ class VerbosScreen extends StatelessWidget {
 
   // Función para reproducir sonido
   void playAudio(String file) {
-    player.play(AssetSource("audio/verbos/$file"));
+    player.play(AssetSource("audio/$file"));
   }
 
   @override

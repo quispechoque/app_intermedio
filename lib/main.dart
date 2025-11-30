@@ -1,3 +1,4 @@
+import 'package:app_intermedio/pantallas/adjetivos.dart';
 import 'package:app_intermedio/pantallas/ventana_tiempos_verbales.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,8 @@ class MyApp extends StatelessWidget {
         '/ventana_juegos': (context) => MenuJuegos(),
         '/verbos':(context) => VerbosScreen(),
         '/preguntas': (context) => PreguntaRespuestaScreen(),
-        '/adjetivos': (context) => AdjetivosAdverbios(),
+        '/adjetivosadverbios': (context) => AdjetivosAdverbios(),
+        '/adjetivos':(context) => Adjetivos()
       },
     );
   }
