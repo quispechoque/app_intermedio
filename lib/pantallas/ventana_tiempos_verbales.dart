@@ -27,7 +27,7 @@ class _VentanaTiemposVerbalesState extends State<VentanaTiemposVerbales> {
                 const widgetTiempoVerbal(
                   titulo: "TIEMPOS SIMPLES",
                   subtitulo: "1. Presente Simple", 
-                  tipo_de_uso: "Rutinas, hechos generales, gustsos", 
+                  tipo_de_uso: "Rutinas, hechos generales, gustos", 
                   la_estructura: "Sujeto + Verbo en forma base (he/she/it + s)",
                   un_ejemplo: "I work every day\n > She like(s) coffe",
                 ),
@@ -89,7 +89,7 @@ class _VentanaTiemposVerbalesState extends State<VentanaTiemposVerbales> {
                   subtitulo: "1. Presente perfecto continuo", 
                   tipo_de_uso: "Accion que empezo en el pasado y continua; enfacis en la duracion", 
                   la_estructura: "have/has been + verbo + ing", 
-                  un_ejemplo: "I have been studiying for three hours"
+                  un_ejemplo: "I have been studying for three hours"
                 ),
                 const widgetTiempoVerbal(
                   subtitulo: "2. Pasado perfecto continuo", 

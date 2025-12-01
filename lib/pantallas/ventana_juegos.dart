@@ -25,7 +25,7 @@ class MenuJuegos extends StatelessWidget {
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 200),
+              const SizedBox(height: 200),
               //Grid para los botones
               GridView.count(
                 crossAxisCount: 2, // dos columnas(en auto crea dos filas)
