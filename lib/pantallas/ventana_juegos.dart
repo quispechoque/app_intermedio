@@ -46,12 +46,12 @@ class MenuJuegos extends StatelessWidget {
                     ),
                     child: const Text("Verbos"),
                   ),
-                  // botn pregunta y respuesta
+                  // boton timepos Verbales
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/preguntas');
+                      Navigator.pushNamed(context, '/ventana_tiempos_verbales');
                     },
-                    child: const Text("Pregunta - Respuesta"),
+                    child: const Text("Tiempos Verbales"),
                   ),
                   // boton adjetivos y adverbios
                   ElevatedButton(
@@ -60,12 +60,12 @@ class MenuJuegos extends StatelessWidget {
                     },
                     child: const Text("Adjetivos y Adverbios"),
                   ),
-                  // boton timepos Verbales
+                  // botn pregunta y respuesta
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/ventana_tiempos_verbales');
+                      Navigator.pushNamed(context, '/preguntas');
                     },
-                    child: const Text("Tiempos Verbales"),
+                    child: const Text("Pregunta - Respuesta"),
                   ),
                 ],
               ),
