@@ -124,7 +124,8 @@ class _PracticaBeState extends State<PracticaBe> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Práctica Verbo Be'),
+        title: const Text('Práctica Verbo TO BE'),
+        backgroundColor: Colors.lime,
         centerTitle: true,
       ),
       body: Padding(
@@ -153,6 +154,7 @@ class _PracticaBeState extends State<PracticaBe> {
             const SizedBox(height: 50),
             // Botones de opciones
             Wrap(
+              alignment: WrapAlignment.center, // centreado de botones 
               spacing: 10,
               runSpacing: 10,
               children: options.map<Widget>((opt) {

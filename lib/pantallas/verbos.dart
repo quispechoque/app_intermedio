@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'practicaBe.dart';
+import 'practicaHave.dart';
 
 class VerbosScreen extends StatelessWidget {
   VerbosScreen({super.key});
@@ -15,7 +16,7 @@ class VerbosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Verbos en inglés")),
+      appBar: AppBar(title: const Text("Verbos en inglés"), backgroundColor: Colors.lime,),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -58,13 +59,16 @@ class VerbosScreen extends StatelessWidget {
              // BOTÓN PARA PRACTICAR
             Center(
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 32, 88, 131),
+                    ),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (_) => const PracticaBe()),
                   );
                 },
-                child: const Text("Practicar TO BE"),
+                child: const Text("Practicar TO BE", style: TextStyle(color: Colors.white),),
               ),
             ),
 
@@ -103,8 +107,16 @@ class VerbosScreen extends StatelessWidget {
 
             Center(
               child: ElevatedButton(
-                onPressed: () {},
-                child: const Text("Practicar TO HAVE"),
+                style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 32, 88, 131),
+                    ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const PracticaHave()),
+                  );
+                },
+                child: const Text("Practicar TO HAVE",style: TextStyle(color: Colors.white)),
               ),
             ),
           ],
@@ -116,6 +128,7 @@ class VerbosScreen extends StatelessWidget {
   // 🔊 WIDGET PARA CADA FILA DE CONJUGACIÓN
   Widget _itemConjugacion(String texto, String audioFile) {
     return Card(
+      color: const Color.fromARGB(255, 158, 183, 196), // Cambio de color de widget
       child: ListTile(
         title: Text(texto),
         trailing: IconButton(
