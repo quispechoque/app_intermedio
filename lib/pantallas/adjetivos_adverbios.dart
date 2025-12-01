@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+
 class AdjetivosAdverbios extends StatefulWidget {
   const AdjetivosAdverbios({super.key});
 
@@ -30,38 +31,72 @@ class _AdjetivosAdverbiosState extends State<AdjetivosAdverbios> {
       await player.stop(); // detener audio anterior si hay
       await player.play(AssetSource(path));
     } catch (e) {
-      throw("Error al reproducir audio: $e");
+      throw ("Error al reproducir audio: $e");
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Adjetivos y Adverbios'), backgroundColor: Colors.lime),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(20),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, crossAxisSpacing: 20, mainAxisSpacing: 20,
-        ),
-        itemCount: adjetivos.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () => playAudio(adjetivos[index]["audio"]!),
-            child: Column(
-              children: [
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(adjetivos[index]["imagen"]!, fit: BoxFit.cover),
+      appBar: AppBar(
+        title: const Text('Adjetivos y Adverbios'),
+        backgroundColor: Colors.lime,
+      ),
+      body: Column(
+        children: [
+          // Grid de adjetivos
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.all(20),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, crossAxisSpacing: 20, mainAxisSpacing: 20,
+              ),
+              itemCount: adjetivos.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () => playAudio(adjetivos[index]["audio"]!),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(
+                            adjetivos[index]["imagen"]!,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(adjetivos[index]["nombre"]!,
+                          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    ],
                   ),
-                ),
-                const SizedBox(height: 5),
-                Text(adjetivos[index]["nombre"]!,
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              ],
+                );
+              },
             ),
-          );
-        },
+          ),
+
+          // Botón al final
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.lime,
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onPressed: () { 
+                Navigator.pushNamed(context, '/adjetivos_ejemplos');
+              },
+              child: const Text(
+                'Ejemplos',
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

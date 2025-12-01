@@ -125,7 +125,6 @@ class VerbosScreen extends StatelessWidget {
     );
   }
 
-  // 🔊 WIDGET PARA CADA FILA DE CONJUGACIÓN
   Widget _itemConjugacion(String texto, String audioFile) {
     return Card(
       color: const Color.fromARGB(255, 158, 183, 196), // Cambio de color de widget

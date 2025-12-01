@@ -42,5 +42,6 @@ flutter:
   #aqui añadi la carpeta de imagenes
   assets:
     - assets/audio/
+    - assets/audio/ej_adjetivos/
     - assets/images/
 

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 //Nuevas ventanas añadidas
 import 'pantallas/ventana_menu_principal.dart';
 import 'pantallas/ventana_bienvenida.dart';
+import 'pantallas/adjetivos.dart';
+import 'pantallas/adverbios.dart';
 
 //Ventanas que ya existian
 import 'pantallas/ventana_juegos.dart'; //es una edicion de la anterior ventana MenuPrincipal
@@ -50,6 +52,8 @@ class MyApp extends StatelessWidget {
         '/verbos':(context) => VerbosScreen(),
         '/preguntas': (context) => const PreguntaRespuestaScreen(),
         '/adjetivos': (context) => const AdjetivosAdverbios(),
+        '/adjetivos_ejemplos': (context) => Adjetivos(),
+        '/adverbios_ejemplos': (context) => Adverbios(),
       },
     );
   }
