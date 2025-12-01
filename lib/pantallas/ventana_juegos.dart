@@ -18,13 +18,14 @@ class MenuJuegos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Menú principal")),
+      appBar: AppBar(title: const Text("Menú principal"), backgroundColor: Colors.lime,),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(height: 200),
               //Grid para los botones
               GridView.count(
                 crossAxisCount: 2, // dos columnas(en auto crea dos filas)
