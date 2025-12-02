@@ -35,13 +35,6 @@ class MyApp extends StatelessWidget {
 
       //Rutas de las ventanas
 
-      /*
-        Para agregar una ruta solo es canbiar lo que esta entre comillas por un nombre que quieras 
-        y invocar a la clase correspondiente, hay que importar el archivo dart de la ventana arriba
-
-        '/rutaextra': (context) => const claseDeVentana(),
-      */
-
       routes: {
         '/': (context) => const VentanaMenuPrincipal(),
         '/ventana_bienvenida': (context) => const VentanaBienvenida(),

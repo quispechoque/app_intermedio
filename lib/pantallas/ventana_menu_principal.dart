@@ -18,7 +18,7 @@ class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Aplicacion intermedia'),
-        backgroundColor: Colors.lime,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding( 
         padding: const EdgeInsets.all(16.0),
@@ -27,7 +27,13 @@ class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 20),
-              const Text('BIENVENIDO'),
+              const Text(
+                'BIENVENIDO',
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.teal,
+                ),
+              ),
 
               //Para ingresar el nombre
               const Text("Ingresa tu nombre:"),
@@ -41,14 +47,24 @@ class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
 
               //para el genero
               const Text("Cual es su genero?"),
+              const SizedBox(height: 20),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 74, 225, 180),
+                      foregroundColor: Colors.white,
+                    ),
                     onPressed: (){
                       EscogerGenero("Masculino");
                     }, 
                     child: const Text("Masculino")),
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 74, 225, 180),
+                      foregroundColor: Colors.white,
+                    ),
                     onPressed: (){
                       EscogerGenero("Femenino");
                     },  
@@ -59,11 +75,20 @@ class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
 
               //Botones para avanzar o limpiar datos
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: (){}, 
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white,
+                    ),
+                    onPressed: Limpiar, 
                     child: const Text("Limpiar")),
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 74, 225, 180),
+                      foregroundColor: Colors.white,
+                    ),
                     onPressed: Aceptar, 
                     child: const Text("Aceptar")),
                 ],
@@ -104,3 +129,10 @@ class _VentanaMenuPrincipalState extends State<VentanaMenuPrincipal> {
 
 }
 
+/*
+style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.teal,
+            ),
+*/

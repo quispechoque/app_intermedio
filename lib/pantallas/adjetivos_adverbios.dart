@@ -29,7 +29,7 @@ class AdjetivosAdverbios extends StatelessWidget {
             // ---------------------------
             const Text(
               "Adjetivos en inglés",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.teal,),
             ),
 
             const SizedBox(height: 10),
@@ -79,7 +79,7 @@ class AdjetivosAdverbios extends StatelessWidget {
             // ---------------------------
             const Text(
               "Adverbios en inglés",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.teal,),
             ),
 
             const SizedBox(height: 10),

@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:app_intermedio/widgets/widget_botones.dart';
 
-/*
-  Aldrin Rocha
-  NOTA: cambie el nombre para evitar confuciones 
-  con el menu princial que se ve al iniciar la app
-
-  NOTA2: Tambien cambie el como la aplicacion va de esta pantalla a las demas
-  Antes:
-    Navigator.push(context, MaterialPageRoute(builder: (_) => VerbosScreen()));
-  Ahora:
-    Navigator.pushNamed(context, '/direccion');
-*/
 
 class MenuJuegos extends StatelessWidget {
   const MenuJuegos({super.key});
@@ -18,12 +8,15 @@ class MenuJuegos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Menú principal")),
+      appBar: AppBar(
+        title: const Text("Menú principal"),
+        backgroundColor: Colors.blueAccent,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //Grid para los botones
               GridView.count(
@@ -34,39 +27,36 @@ class MenuJuegos extends StatelessWidget {
                 childAspectRatio: 3,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(), //esto evitar la barra de delizamiento
-                children: [
+                children:const [
                   // boton Verbos
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/verbos');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(double.infinity, 20),
-                    ),
-                    child: const Text("Verbos"),
+                  widgetBoton(
+                    direccion: "/verbos", texto: "Verbos"
                   ),
                   // botn pregunta y respuesta
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/preguntas');
-                    },
-                    child: const Text("Pregunta - Respuesta"),
+                  widgetBoton(
+                    direccion: "/preguntas", texto: "Preguntas - Respuestas"
                   ),
                   // boton adjetivos y adverbios
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/adjetivosadverbios');
-                    },
-                    child: const Text("Adjetivos y Adverbios"),
+                  widgetBoton(
+                    direccion: "/adjetivosadverbios", texto: "Adjetivos y Adverbios"
                   ),
                   // boton timepos Verbales
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/ventana_tiempos_verbales');
-                    },
-                    child: const Text("Tiempos Verbales"),
+                  widgetBoton(
+                    direccion: "/ventana_tiempos_verbales", texto: "Tiempos Verbales"
                   ),
                 ],
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(120, 60),
+                  backgroundColor: Colors.red,
+                  foregroundColor: Colors.white,
+                  alignment: Alignment.center,
+                ),
+                child: const Text("volver"),
               ),
             ],
           ),

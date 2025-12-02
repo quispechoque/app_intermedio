@@ -15,7 +15,10 @@ class VerbosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Verbos en inglés")),
+      appBar: AppBar(
+        title: const Text("Verbos en inglés"),
+        backgroundColor: Colors.blueAccent,
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -25,7 +28,7 @@ class VerbosScreen extends StatelessWidget {
             // TÍTULO
             const Text(
               "Verbo TO BE",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.teal),
             ),
             const SizedBox(height: 10),
 
@@ -40,7 +43,7 @@ class VerbosScreen extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               "Conjugación:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.lightBlue),
             ),
             const SizedBox(height: 10),
 
@@ -74,7 +77,7 @@ class VerbosScreen extends StatelessWidget {
             // SEGUNDO VERBO
             const Text(
               "Verbo TO HAVE",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.teal),
             ),
             const SizedBox(height: 10),
 
@@ -87,7 +90,7 @@ class VerbosScreen extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               "Conjugación:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.lightBlue),
             ),
 
             const SizedBox(height: 10),

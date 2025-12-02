@@ -16,7 +16,7 @@ class _VentanaTiemposVerbalesState extends State<VentanaTiemposVerbales> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Tiempos Verbales"),
-        backgroundColor: Colors.lime,
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -104,11 +104,16 @@ class _VentanaTiemposVerbalesState extends State<VentanaTiemposVerbales> {
                   un_ejemplo: "By next month, I will have been living here for a year"
                 ),
                 ElevatedButton(
-                  onPressed: (){
-                    Navigator.pop(context);
-                    }, 
-                  child: const Text("Volver")
-                )
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  foregroundColor: Colors.white,
+                  alignment: Alignment.center,
+                ),
+                child: const Text("volver"),
+              ),
               ]
             ),
           ),
